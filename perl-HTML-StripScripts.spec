@@ -1,15 +1,13 @@
 %define upstream_name    HTML-StripScripts
-%define upstream_version 1.06
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.06
+Release:	2
 
 Summary:	Strip scripting constructs out of HTML
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/clintongormley/perl-html-stripscripts
-Source0:	https://cpan.metacpan.org/authors/id/D/DR/DRTECH/HTML-StripScripts-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DR/DRTECH/HTML-StripScripts-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -30,7 +28,7 @@ values. This approach is the most secure against disguised scripting
 constructs hidden in malicious HTML documents.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -59,9 +57,7 @@ make test
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 1.40.0-1mdv2010.0
 + Revision: 403260
-- rebuild using %%perl_convert_version
-
-* Fri Jul 04 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.04-1mdv2009.0
+- rebuild using %1.06 Fri Jul 04 2008 Guillaume Rousse <guillomovitch@mandriva.org> 1.04-1mdv2009.0
 + Revision: 231906
 - import perl-HTML-StripScripts
 
